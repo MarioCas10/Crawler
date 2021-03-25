@@ -6,7 +6,7 @@ public class Crawler {
         
         Acceso_Fichero entrada = new Acceso_Fichero();
         entrada.read();
-
+        
     }
 
 }

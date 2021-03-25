@@ -22,7 +22,7 @@ public class Acceso_Fichero{
             System.out.println("Generado exitosamente");//si todo sale bien mostramos un mensaje de guardado exitoso
 
         }catch(IOException e) {
-            System.out.println("No se ha encontrado el archivo seleccionado");
+            System.out.println("No se ha encontrado el archivo");
         }
     }
 }

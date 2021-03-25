@@ -8,4 +8,5 @@ public class Jsoup {
     log("%s\n\t%s", 
         headline.attr("title"), headline.absUrl("href"));
     }
+    
 }
