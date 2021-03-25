@@ -7,5 +7,5 @@ public class Jsoup {
     for (Element headline : newsHeadlines) {
     log("%s\n\t%s", 
         headline.attr("title"), headline.absUrl("href"));
+    }
 }
-
