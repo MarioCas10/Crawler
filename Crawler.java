@@ -7,7 +7,6 @@ import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
 public class Crawler {
 
     public static void main(String[] args) throws IOException, InterruptedException {
