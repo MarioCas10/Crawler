@@ -1,38 +1,37 @@
 import Crawler.*;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Crawler {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         
-        Acceso_Fichero entrada = new Acceso_Fichero();
-        entrada.read();
+		try{
+			Acceso_Fichero entrada = new Acceso_Fichero();
+			entrada.read();
 
-        String Crawler = System.getProperty("user.dir")+"/";
-	    //long inicio = System.currentTimeMillis();
-	    String Url = "https://example.com";
-	    String Text = "urls.txt";
-	    int codigo = StatusCode.getStatusConnectionCode(Url);
-	    if(codigo==200){
-	        crearOComprobarArchivo(Url, Crawler+Text);
-            System.out.println(codigo);
-	    }else{
-	        JOptionPane.showMessageDialog(new JFrame(),"No se ha podido cargar la página.\nEl Status code que "+"devuelve la página es: "+codigo);
-	   }
-		System.exit(0);
-        
-        Set<String> visitedUrls = new HashSet<>();
-        String url = "https://example.com";
-        crawl(url, visitedUrls);
-	}
+			String url = "https://example.com";
+			URL obj = new URL(url);
+			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-    private static void crearOComprobarArchivo(String url, String crawler){}
-    private static void crawl(String url, Set<String> visited) {}
+			int responseCode = con.getResponseCode();
+			System.out.println("\nSending GET resquest to URL: " + url);
+			System.out.println("Response Code : " + responseCode);
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+			String inputLine; 
+			StringBuffer response = new StringBuffer();
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+
+		}catch(Exception e){
+			System.out.println(e);
+		}
+	}	
 }
