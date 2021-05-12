@@ -20,14 +20,14 @@ public class Utilidades {		//Esta es mi clase utilidades, el cual me devuelve un
 		while ((st = br.readLine()) != null)	//En donde luego realizo un bucle while en el que si me lea el archivo y sino esta vacio que me añada los urls al arrgeglo de strings
 			arreglo.add(st);					//Los añade al arrglo
 		br.close();								//Cierra el buffer
-		return arreglo;							//Mientras que siempre retorne al archivo
+		return arreglo;							//Mientras que siempre retorne al archivo, ya que lo llamo en el main 
 	}
 
 	
 	public File createLog(String name) throws IOException {	//En esta funcion simplemente creo mi archivo que estare utilizando para el log, es que el que llamo luego en el Main
 		File file = new File(name);	//Creo el metodo
 		file.createNewFile();	//Luego con el .createNewFile creo el archivo
-		return file;	//Y simplemente que me retorne al mismo
+		return file;	//Y luego que me retorne, ya que lo llamo al main 
 	}
 	
 	public void writeLog(File file, ArrayList<String> urlList) throws IOException {		//Esta funcion la genero para escribir los datos en el archivo log el cual lo paso por una lista de urls
