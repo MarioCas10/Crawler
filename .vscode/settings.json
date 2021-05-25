@@ -1,11 +1,15 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "jsoup-1.13.1.jar",
-        "Crawler/jsoup-1.13.1.jar",
-        "Main/jsoup-1.13.1.jar"
-    ],
-    "java.project.sourcePaths": [
-        ""
-    ]
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "jsoup-1.13.1.jar",
+    "Crawler/jsoup-1.13.1.jar",
+    "Main/jsoup-1.13.1.jar"
+  ],
+  "java.project.sourcePaths": [
+    ""
+  ],
+  "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
+  "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
+  "C_Cpp_Runner.debuggerPath": "/usr/bin/gdb",
+  "C_Cpp_Runner.makePath": "/usr/bin/make"
 }

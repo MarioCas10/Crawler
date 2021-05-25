@@ -32,7 +32,6 @@ public class Crawler {		//Primeramente creo mi Main que es en donde esatre llama
 		System.out.println("Crawler finished. Total URLs: " + parser.urlList.size());	//Con este print muestra la cantidad de links procesados 
 	}
 	
-
 	private ArrayList<String> urlList;	//Lista de Urls Procesados 
 	private ArrayList<String> noProcess;	//Lista de Urls NoProcesados 
 	public static final String nameLog = "/home/mario/Grado2/JavaCrawler/links.log";	//Aqui para poder leer los archivos que ya estan creados, simplemente los busco a traves de las carpetas de mi ordenador. 
@@ -49,7 +48,7 @@ public class Crawler {		//Primeramente creo mi Main que es en donde esatre llama
 			return numUrl;		//Me retorne a numero de urls 
 		Document doc = Jsoup.connect(url).get();	//Este metodo, asi como lo tengo es neceasrio decir que me apoye de internet, en donde con la libreria de documentes y Jsoup, las conecto para obterner los urls
 		Elements links = doc.select("a[href]");		//Esta linea lo que hace es crearme hyperlinks que contenga cada urls de cierta pagina
-		for (Element link : links) {	//Aqui realizo un bucle for en donde si el link es igual a los links, em haga lo siguiente
+		for (Element link : links) {	//Aqui realizo un bucle for en donde si el link es igual a los links, me haga lo siguiente
 			String actualUrl = link.attr("abs:href"); //En donde si quiero obtener un link completo de cierta pagina es necesario implementar esto y escribir lo que esta en comillas, ya que eso me obtiene la direccion HTTP
 			noProcess.add(actualUrl);	//Luego aqui, los links no Procesados me los vaya añadiendo a los actuales, de esa forma puedo saber cuales son ya me los añade al Array.
 		}
